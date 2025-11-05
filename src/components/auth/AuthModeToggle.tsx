@@ -10,24 +10,24 @@ export function AuthModeToggle({ mode, onSwitch }: Props) {
 		<div className="text-center text-sm text-gray-600">
 			{isSignIn ? (
 				<p>
-					还没有账号？{" "}
+					Don&apos;t have an account?{" "}
 					<button
 						type="button"
 						className="font-medium text-green-600 hover:text-green-700"
 						onClick={() => onSwitch("signUp")}
 					>
-						立即注册
+						Create one
 					</button>
 				</p>
 			) : (
 				<p>
-					已经有账号？{" "}
+					Already have an account?{" "}
 					<button
 						type="button"
 						className="font-medium text-green-600 hover:text-green-700"
 						onClick={() => onSwitch("signIn")}
 					>
-						返回登录
+						Back to sign in
 					</button>
 				</p>
 			)}

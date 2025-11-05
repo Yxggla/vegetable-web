@@ -8,7 +8,7 @@ export function validateEmail(value: string) {
 	if (!emailPattern.test(value)) {
 		return {
 			valid: false,
-			message: "邮箱格式不正确，请输入有效邮箱地址。",
+			message: "Enter a valid email address.",
 		};
 	}
 
@@ -19,7 +19,7 @@ export function validateUsername(value: string) {
 	if (!usernamePattern.test(value)) {
 		return {
 			valid: false,
-			message: "用户名需为 3-16 位字母、数字或下划线组合。",
+			message: "Username must be 3-16 characters using letters, numbers, or underscores.",
 		};
 	}
 
@@ -30,7 +30,7 @@ export function validatePassword(value: string) {
 	if (!passwordPattern.test(value)) {
 		return {
 			valid: false,
-			message: "密码至少 6 位，可包含字母、数字和常见符号。",
+			message: "Password must be at least 6 characters and may include letters, numbers, or symbols.",
 		};
 	}
 

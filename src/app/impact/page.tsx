@@ -5,8 +5,8 @@ import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 export default function ImpactPage() {
 	return (
 		<ModulePageShell
-			title="社会影响"
-			description="看看我们在城市社区、合作伙伴以及可持续实践方面创造的改变。"
+			title="Impact"
+			description="Explore how we collaborate with cities, partners, and communities to build sustainable food systems."
 		>
 			<div className="space-y-16">
 				<ImpactSection />

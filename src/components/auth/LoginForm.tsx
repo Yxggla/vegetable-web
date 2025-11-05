@@ -35,7 +35,7 @@ export function LoginForm() {
 				const sanitizedEmail = email.trim().toLowerCase();
 				const user = await loginUser({ email: sanitizedEmail, password });
 				setUser(user);
-				setStatusMessage(`登录成功，欢迎 ${user.username}！`);
+				setStatusMessage(`Signed in successfully. Welcome back, ${user.username}!`);
 				router.push("/");
 				return;
 			}
@@ -65,7 +65,7 @@ export function LoginForm() {
 				password,
 			});
 
-			setStatusMessage("注册成功！请使用新账号登录。");
+			setStatusMessage("Registration successful! Please sign in with your new account.");
 			setMode("signIn");
 			setUsername("");
 		} catch (error) {
@@ -81,10 +81,10 @@ export function LoginForm() {
 		<div className="space-y-8 rounded-2xl border border-green-100 bg-white/80 p-8 shadow-xl backdrop-blur">
 			<div className="space-y-2 text-center">
 				<h1 className="text-3xl font-bold text-gray-900">
-					{mode === "signIn" ? "欢迎回来" : "创建新账号"}
+					{mode === "signIn" ? "Welcome back" : "Create an account"}
 				</h1>
 				<p className="text-sm text-gray-500">
-					使用您的 VegetableWeb 账户登录或注册新账号
+					Sign in with your VegetableWeb account or register a new one.
 				</p>
 			</div>
 
@@ -96,7 +96,7 @@ export function LoginForm() {
 								htmlFor="username"
 								className="block text-sm font-medium text-gray-700"
 							>
-								用户名
+								Username
 							</label>
 							<input
 								id="username"
@@ -106,7 +106,7 @@ export function LoginForm() {
 								value={username}
 								onChange={(event) => setUsername(event.target.value)}
 								className="mt-1 block w-full rounded-lg border border-gray-200 px-4 py-2.5 text-gray-900 shadow-sm transition focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/50"
-								placeholder="例如: veggie_lover"
+								placeholder="e.g. veggie_lover"
 							/>
 						</div>
 					)}
@@ -115,7 +115,7 @@ export function LoginForm() {
 							htmlFor="email"
 							className="block text-sm font-medium text-gray-700"
 						>
-							邮箱
+							Email
 						</label>
 						<input
 							id="email"
@@ -133,7 +133,7 @@ export function LoginForm() {
 							htmlFor="password"
 							className="block text-sm font-medium text-gray-700"
 						>
-							密码
+							Password
 						</label>
 						<input
 							id="password"
@@ -145,7 +145,7 @@ export function LoginForm() {
 							value={password}
 							onChange={(event) => setPassword(event.target.value)}
 							className="mt-1 block w-full rounded-lg border border-gray-200 px-4 py-2.5 text-gray-900 shadow-sm transition focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/50"
-							placeholder="输入密码"
+							placeholder="Enter password"
 						/>
 					</div>
 				</div>
@@ -163,7 +163,7 @@ export function LoginForm() {
 					disabled={loading}
 					className="w-full rounded-lg bg-green-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-green-700 disabled:cursor-not-allowed disabled:opacity-70"
 				>
-					{loading ? "提交中..." : mode === "signIn" ? "登录" : "注册"}
+					{loading ? "Submitting..." : mode === "signIn" ? "Sign in" : "Sign up"}
 				</button>
 			</form>
 

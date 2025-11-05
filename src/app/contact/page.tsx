@@ -3,27 +3,27 @@ import { CtaSection } from "@/components/home/CtaSection";
 
 const contactPoints = [
 	{
-		title: "商务合作",
+		title: "Partnerships",
 		details: "partnerships@vegetableweb.com",
-		description: "拓展渠道、品牌联合、园区共建等合作机会。",
+		description: "Channel expansion, co-branded initiatives, and campus deployment opportunities.",
 	},
 	{
-		title: "媒体联系",
+		title: "Press",
 		details: "press@vegetableweb.com",
-		description: "采访、媒体报道与演讲邀请。",
+		description: "Interviews, media inquiries, and speaking engagements.",
 	},
 	{
-		title: "客服支持",
+		title: "Support",
 		details: "support@vegetableweb.com",
-		description: "部署进度、售后服务与技术支援。",
+		description: "Deployment updates, post-launch service, and technical assistance.",
 	},
 ];
 
 export default function ContactPage() {
 	return (
 		<ModulePageShell
-			title="联系我们"
-			description="留下需求与想法，我们的团队会在一个工作日内回复。"
+			title="Contact"
+			description="Send us your request and our team will respond within one business day."
 		>
 			<section className="py-16">
 				<div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

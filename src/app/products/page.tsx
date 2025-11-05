@@ -5,8 +5,8 @@ import { CtaSection } from "@/components/home/CtaSection";
 export default function ProductsPage() {
 	return (
 		<ModulePageShell
-			title="产品方案"
-			description="为零售、餐饮、园区提供灵活的城市农业方案，挑选最适合的部署组合。"
+			title="Solutions"
+			description="Choose the right mix of urban farming deployments for retail, hospitality, and campus partners."
 		>
 			<div className="space-y-16">
 				<ProductsSection />
