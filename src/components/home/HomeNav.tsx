@@ -3,14 +3,15 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useAuth } from "@/context/AuthContext";
 import { DesktopAccountMenu } from "@/components/navigation/DesktopAccountMenu";
 import { MobileAccountMenu } from "@/components/navigation/MobileAccountMenu";
 import { primaryNavItems } from "@/components/navigation/navItems";
+import { useAuthStore } from "@/store/authStore";
 
 export function HomeNav() {
 	const router = useRouter();
-	const { user, clearUser } = useAuth();
+	const user = useAuthStore((state) => state.user);
+	const clearUser = useAuthStore((state) => state.clearUser);
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	const userInitial = user?.username?.charAt(0).toUpperCase() ?? "U";

@@ -2,7 +2,6 @@
 
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
-import { useAuth } from "@/context/AuthContext";
 import { loginUser, registerUser } from "@/lib/auth";
 import {
 	validateEmail,
@@ -10,12 +9,13 @@ import {
 	validateUsername,
 } from "@/lib/validation";
 import { AuthModeToggle } from "./AuthModeToggle";
+import { useAuthStore } from "@/store/authStore";
 
 type AuthMode = "signIn" | "signUp";
 
 export function LoginForm() {
 	const router = useRouter();
-	const { setUser } = useAuth();
+	const setUser = useAuthStore((state) => state.setUser);
 	const [mode, setMode] = useState<AuthMode>("signIn");
 	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
