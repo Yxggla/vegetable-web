@@ -7,9 +7,6 @@ export const primaryNavItems: NavItem[] = [
 	{ href: "/", label: "Home" },
 	{ href: "/vegetables", label: "Vegetables" },
 	{ href: "/about", label: "About" },
-	// { href: "/technology", label: "Technology" },
-	// { href: "/impact", label: "Impact" },
-	// { href: "/products", label: "Products" },
-	// { href: "/testimonials", label: "Testimonials" },
+	{ href: "/recipes", label: "Recipes" },
 	{ href: "/contact", label: "Contact" },
 ];
