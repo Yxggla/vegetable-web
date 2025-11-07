@@ -13,9 +13,10 @@ import {
 
 type Props = {
 	item: Vegetable;
+	onFavoriteChange?: (slug: string, isFavorite: boolean) => void;
 };
 
-export function VegetableCard({ item }: Props) {
+export function VegetableCard({ item, onFavoriteChange }: Props) {
 	const router = useRouter();
 	const user = useAuthStore((state) => state.user);
 	const favorites = useVegetableStore((state) => state.favorites);
@@ -39,9 +40,11 @@ export function VegetableCard({ item }: Props) {
 			if (isFavorite) {
 				await removeFavoriteVegetable(user.id, item.id);
 				removeFavorite(item.slug);
+				onFavoriteChange?.(item.slug, false);
 			} else {
 				await addFavoriteVegetable(user.id, item.id);
 				addFavorite(item.slug);
+				onFavoriteChange?.(item.slug, true);
 			}
 		} catch (error) {
 			console.error("Failed to update favorite", error);
@@ -51,7 +54,7 @@ export function VegetableCard({ item }: Props) {
 	};
 
 	return (
-		<article className="group flex flex-col overflow-hidden rounded-3xl border border-green-100 bg-white/80 shadow-sm backdrop-blur transition hover:-translate-y-1 hover:shadow-lg">
+		<article className="group relative flex flex-col overflow-hidden rounded-3xl border border-green-100 bg-white/80 shadow-sm backdrop-blur transition hover:-translate-y-1 hover:shadow-lg">
 			<div className="relative h-48 w-full overflow-hidden bg-green-50">
 				<Image
 					src={item.image}
@@ -63,24 +66,46 @@ export function VegetableCard({ item }: Props) {
 					type="button"
 					onClick={handleFavoriteClick}
 					disabled={pending}
-					className="absolute right-4 top-4 rounded-full bg-white/90 p-2 shadow-sm transition hover:bg-white"
+					className={`absolute right-4 top-4 rounded-full bg-white/90 p-2 shadow-sm transition ${pending ? "opacity-70" : "hover:bg-white"}`}
 					aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
 				>
-					<svg
-						className={`h-5 w-5 ${
-							isFavorite ? "fill-green-500 text-green-500" : "text-gray-400"
-						}`}
-						viewBox="0 0 24 24"
-						stroke="currentColor"
-						fill="none"
-					>
-						<path
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							strokeWidth={1.8}
-							d="M11.48 3.499a3.176 3.176 0 011.04 1.96c.06.497.67.69 1.05.338a3.5 3.5 0 014.88.185c1.26 1.33 1.33 3.417.21 4.84l-1.24 1.64c-.41.55-.44 1.295-.08 1.87l.19.31c.73 1.18.6 2.69-.31 3.71a2.989 2.989 0 01-3.9.51l-1.23-.79a1.23 1.23 0 00-1.32 0l-1.23.79a2.989 2.989 0 01-3.9-.51 2.993 2.993 0 01-.31-3.71l.19-.31c.36-.575.33-1.32-.08-1.87l-1.24-1.64c-1.12-1.423-1.05-3.51.21-4.84a3.5 3.5 0 014.88-.185c.38.352.99.159 1.05-.338a3.176 3.176 0 011.04-1.96 1.5 1.5 0 012.04 0z"
-						/>
-					</svg>
+					{pending ? (
+						<svg
+							className="h-5 w-5 animate-spin text-green-500"
+							viewBox="0 0 24 24"
+							fill="none"
+						>
+							<circle
+								className="opacity-25"
+								cx="12"
+								cy="12"
+								r="10"
+								stroke="currentColor"
+								strokeWidth="4"
+							/>
+							<path
+								className="opacity-75"
+								fill="currentColor"
+								d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+							/>
+						</svg>
+					) : (
+						<svg
+							className={`h-5 w-5 ${
+								isFavorite ? "fill-green-500 text-green-500" : "text-gray-400"
+							}`}
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+							fill="none"
+						>
+							<path
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth={1.8}
+								d="M11.48 3.499a3.176 3.176 0 011.04 1.96c.06.497.67.69 1.05.338a3.5 3.5 0 014.88.185c1.26 1.33 1.33 3.417.21 4.84l-1.24 1.64c-.41.55-.44 1.295-.08 1.87l.19.31c.73 1.18.6 2.69-.31 3.71a2.989 2.989 0 01-3.9.51l-1.23-.79a1.23 1.23 0 00-1.32 0l-1.23.79a2.989 2.989 0 01-3.9-.51 2.993 2.993 0 01-.31-3.71l.19-.31c.36-.575.33-1.32-.08-1.87l-1.24-1.64c-1.12-1.423-1.05-3.51.21-4.84a3.5 3.5 0 014.88-.185c.38.352.99.159 1.05-.338a3.176 3.176 0 011.04-1.96 1.5 1.5 0 012.04 0z"
+							/>
+						</svg>
+					)}
 				</button>
 			</div>
 			<div className="flex flex-1 flex-col space-y-4 p-6">

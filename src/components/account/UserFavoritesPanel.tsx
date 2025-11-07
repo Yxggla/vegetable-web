@@ -18,7 +18,8 @@ type FavoritesAction =
 	| { type: "loading" }
 	| { type: "success"; payload: Vegetable[] }
 	| { type: "error"; payload: string }
-	| { type: "reset" };
+	| { type: "reset" }
+	| { type: "remove"; payload: string };
 
 const initialState: FavoritesState = {
 	status: "idle",
@@ -39,6 +40,12 @@ function favoritesReducer(
 			return { status: "error", items: [], error: action.payload };
 		case "reset":
 			return initialState;
+		case "remove":
+			return {
+				...state,
+				status: "ready",
+				items: state.items.filter((item) => item.slug !== action.payload),
+			};
 		default:
 			return state;
 	}
@@ -49,6 +56,12 @@ export function UserFavoritesPanel() {
 	const user = useAuthStore((state) => state.user);
 	const setFavorites = useVegetableStore((state) => state.setFavorites);
 	const [state, dispatch] = useReducer(favoritesReducer, initialState);
+
+	const handleFavoriteChange = (slug: string, isFavorite: boolean) => {
+		if (!isFavorite) {
+			dispatch({ type: "remove", payload: slug });
+		}
+	};
 
 	useEffect(() => {
 		if (!user) {
@@ -136,7 +149,11 @@ export function UserFavoritesPanel() {
 
 			<div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
 				{state.items.map((item) => (
-					<VegetableCard key={item.slug} item={item} />
+					<VegetableCard
+						key={item.slug}
+						item={item}
+						onFavoriteChange={handleFavoriteChange}
+					/>
 				))}
 			</div>
 		</div>
