@@ -1,9 +1,20 @@
 import { ModulePageShell } from "@/components/layout/ModulePageShell";
 import { VegetableFilters } from "@/components/vegetables/VegetableFilters";
 import { VegetableGrid } from "@/components/vegetables/VegetableGrid";
-import { vegetables } from "@/data/vegetables";
+import type { Vegetable } from "@/data/vegetables";
+import { fetchVegetables } from "@/lib/vegetableApi";
 
-export default function VegetablesPage() {
+export const revalidate = 0;
+
+export default async function VegetablesPage() {
+	let vegetables: Vegetable[] = [];
+
+	try {
+		vegetables = await fetchVegetables();
+	} catch (error) {
+		console.error("Failed to load vegetables", error);
+	}
+
 	return (
 		<ModulePageShell
 			title="Vegetable atlas"

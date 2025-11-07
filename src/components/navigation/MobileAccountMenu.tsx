@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 type MobileAccountMenuProps = {
@@ -48,7 +49,14 @@ export function MobileAccountMenu({
 				</svg>
 			</button>
 			{open ? (
-				<div className="mt-3 border-t border-green-100 pt-3">
+				<div className="mt-3 space-y-2 border-t border-green-100 pt-3">
+					<Link
+						href="/account"
+						onClick={() => setOpen(false)}
+						className="block w-full rounded-md border border-green-200 px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-green-100 hover:text-green-700"
+					>
+						View account
+					</Link>
 					<button
 						type="button"
 						onClick={onSignOut}

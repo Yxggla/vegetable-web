@@ -1,17 +1,54 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Vegetable } from "@/data/vegetables";
 import { useVegetableStore } from "@/store/vegetableStore";
+import { useAuthStore } from "@/store/authStore";
+import {
+	addFavoriteVegetable,
+	removeFavoriteVegetable,
+} from "@/lib/vegetableApi";
 
 type Props = {
 	item: Vegetable;
 };
 
 export function VegetableCard({ item }: Props) {
+	const router = useRouter();
+	const user = useAuthStore((state) => state.user);
 	const favorites = useVegetableStore((state) => state.favorites);
-	const toggleFavorite = useVegetableStore((state) => state.toggleFavorite);
+	const addFavorite = useVegetableStore((state) => state.addFavorite);
+	const removeFavorite = useVegetableStore((state) => state.removeFavorite);
 	const isFavorite = favorites.includes(item.slug);
+	const [pending, setPending] = useState(false);
+
+	const handleFavoriteClick = async () => {
+		if (!user) {
+			router.push("/login");
+			return;
+		}
+
+		if (!item.id || pending) {
+			return;
+		}
+
+		setPending(true);
+		try {
+			if (isFavorite) {
+				await removeFavoriteVegetable(user.id, item.id);
+				removeFavorite(item.slug);
+			} else {
+				await addFavoriteVegetable(user.id, item.id);
+				addFavorite(item.slug);
+			}
+		} catch (error) {
+			console.error("Failed to update favorite", error);
+		} finally {
+			setPending(false);
+		}
+	};
 
 	return (
 		<article className="group flex flex-col overflow-hidden rounded-3xl border border-green-100 bg-white/80 shadow-sm backdrop-blur transition hover:-translate-y-1 hover:shadow-lg">
@@ -24,7 +61,8 @@ export function VegetableCard({ item }: Props) {
 				/>
 				<button
 					type="button"
-					onClick={() => toggleFavorite(item.slug)}
+					onClick={handleFavoriteClick}
+					disabled={pending}
 					className="absolute right-4 top-4 rounded-full bg-white/90 p-2 shadow-sm transition hover:bg-white"
 					aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
 				>

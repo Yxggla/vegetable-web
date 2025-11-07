@@ -9,6 +9,7 @@ export type VegetableCategory =
 export type GrowingSeason = "Spring" | "Summer" | "Autumn" | "Winter";
 
 export type Vegetable = {
+	id?: string;
 	slug: string;
 	name: string;
 	category: VegetableCategory;

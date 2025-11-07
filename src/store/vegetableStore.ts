@@ -12,7 +12,9 @@ type VegetableFilters = {
 type VegetableState = {
 	favorites: string[];
 	filters: VegetableFilters;
-	toggleFavorite: (slug: string) => void;
+	setFavorites: (slugs: string[]) => void;
+	addFavorite: (slug: string) => void;
+	removeFavorite: (slug: string) => void;
 	clearFilters: () => void;
 	updateFilters: (filters: Partial<VegetableFilters>) => void;
 };
@@ -28,14 +30,16 @@ export const useVegetableStore = create<VegetableState>()(
 		(set, get) => ({
 			favorites: [],
 			filters: defaultFilters,
-			toggleFavorite: (slug) => {
+			setFavorites: (slugs) => set({ favorites: slugs }),
+			addFavorite: (slug) => {
 				const favorites = get().favorites;
-				const exists = favorites.includes(slug);
-				set({
-					favorites: exists
-						? favorites.filter((item) => item !== slug)
-						: [...favorites, slug],
-				});
+				if (favorites.includes(slug)) {
+					return;
+				}
+				set({ favorites: [...favorites, slug] });
+			},
+			removeFavorite: (slug) => {
+				set({ favorites: get().favorites.filter((item) => item !== slug) });
 			},
 			clearFilters: () => set({ filters: defaultFilters }),
 			updateFilters: (filters) =>

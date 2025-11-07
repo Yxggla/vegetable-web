@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 type DesktopAccountMenuProps = {
@@ -63,14 +64,21 @@ export function DesktopAccountMenu({
 				</svg>
 			</button>
 			{open ? (
-				<div className="absolute right-0 mt-3 w-44 rounded-xl border border-green-100 bg-white/95 p-2 text-sm shadow-lg">
+				<div className="absolute right-0 mt-3 w-48 rounded-xl border border-green-100 bg-white/95 p-2 text-sm shadow-lg">
+					<Link
+						href="/account"
+						onClick={() => setOpen(false)}
+						className="block w-full rounded-lg px-3 py-2 text-left font-medium text-gray-700 transition-colors hover:bg-green-50 hover:text-green-700"
+					>
+						View account
+					</Link>
 					<button
 						type="button"
 						onClick={() => {
 							onSignOut();
 							setOpen(false);
 						}}
-						className="block w-full rounded-lg px-3 py-2 text-left font-medium text-green-600 transition-colors hover:bg-green-50"
+						className="mt-1 block w-full rounded-lg px-3 py-2 text-left font-medium text-green-600 transition-colors hover:bg-green-50"
 					>
 						Sign out
 					</button>
