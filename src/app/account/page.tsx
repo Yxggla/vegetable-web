@@ -1,5 +1,7 @@
+import { Suspense } from "react";
 import { ModulePageShell } from "@/components/layout/ModulePageShell";
 import { UserFavoritesPanel } from "@/components/account/UserFavoritesPanel";
+import { UserFavoritesSkeleton } from "@/components/account/UserFavoritesSkeleton";
 
 export default function AccountPage() {
 	return (
@@ -9,7 +11,9 @@ export default function AccountPage() {
 		>
 			<section className="py-20">
 				<div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-					<UserFavoritesPanel />
+					<Suspense fallback={<UserFavoritesSkeleton />}>
+						<UserFavoritesPanel />
+					</Suspense>
 				</div>
 			</section>
 		</ModulePageShell>

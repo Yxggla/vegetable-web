@@ -3,6 +3,7 @@
 import { useEffect, useReducer } from "react";
 import { useRouter } from "next/navigation";
 import { VegetableCard } from "@/components/vegetables/VegetableCard";
+import { UserFavoritesSkeleton } from "@/components/account/UserFavoritesSkeleton";
 import { fetchFavoriteVegetables } from "@/lib/vegetableApi";
 import type { Vegetable } from "@/data/vegetables";
 import { useAuthStore } from "@/store/authStore";
@@ -105,11 +106,7 @@ export function UserFavoritesPanel() {
 	}
 
 	if (state.status === "loading" || state.status === "idle") {
-		return (
-			<div className="rounded-2xl border border-green-100 bg-white/80 p-8 text-center text-sm font-medium text-gray-600 shadow-sm">
-				Loading your favorites...
-			</div>
-		);
+		return <UserFavoritesSkeleton />;
 	}
 
 	if (state.status === "error" && state.error) {
