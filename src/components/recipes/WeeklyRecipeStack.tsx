@@ -20,23 +20,23 @@ type WeeklyRecipeStackProps = {
 export function WeeklyRecipeStack({ recipes }: WeeklyRecipeStackProps) {
 	return (
 		<div className="relative">
-			<div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-green-50 via-white to-white opacity-80" />
-			<ScrollStack className="h-[75vh] max-h-[900px] rounded-[48px] border border-green-100 bg-white/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]">
+			<div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-green-50 via-white to-white" />
+			<ScrollStack className="h-[70vh] max-h-[900px] rounded-[48px] border border-green-100 bg-white/30 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]">
 				{recipes.map((recipe, index) => (
 					<ScrollStackItem key={recipe.dow}>
-						<div className="flex flex-col h-full justify-between">
-							<header className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
+						<div className="flex h-full flex-col justify-between gap-6">
+							<header className="flex flex-wrap items-center justify-between gap-4 text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
 								<span>{recipe.dow}</span>
 								<span className={`inline-flex items-center gap-2 rounded-full bg-gradient-to-r ${getBadgeGradient(index)} px-4 py-1 text-[0.65rem] text-white shadow-lg shadow-green-900/10`}>
-									<span className="h-2 w-2 rounded-full bg-white/80" />
+									<span className="h-2 w-2 rounded-full bg-white/90" />
 									{recipe.theme}
 								</span>
 							</header>
-							<div className="space-y-4 pt-6">
+							<div className="space-y-4">
 								<h3 className="text-3xl font-semibold text-gray-900">{recipe.spotlight}</h3>
 								<p className="text-base leading-7 text-gray-600">{recipe.description}</p>
 							</div>
-							<div className="grid gap-6 pt-6 md:grid-cols-[1fr_minmax(0,0.8fr)]">
+							<div className="grid gap-6 md:grid-cols-[1fr_minmax(0,0.8fr)]">
 								<div>
 									<p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
 										Featured vegetables
@@ -57,8 +57,8 @@ export function WeeklyRecipeStack({ recipes }: WeeklyRecipeStackProps) {
 									<p className="mt-2 leading-6">{recipe.tips}</p>
 								</div>
 							</div>
-							<footer className="pt-6 text-xs font-medium text-gray-400">
-								<div className="flex items-center gap-2">
+							<footer className="pt-2 text-xs font-medium text-gray-400">
+								<div className="flex items-center gap-3">
 									<p className="uppercase tracking-[0.4em]">Day {index + 1} of 7</p>
 									<div className="flex-1 h-px bg-gradient-to-r from-green-100 via-green-200 to-transparent" />
 								</div>
