@@ -13,11 +13,13 @@ type SupabaseVegetable = {
 	id: string;
 	slug: string;
 	name: string;
+	chinese_name: string;
 	category: VegetableCategory;
 	seasons: GrowingSeason[];
 	description: string;
 	origin: string;
 	nutritional_highlights: string[];
+	benefits_for_three_highs: string[];
 	image: string;
 };
 
@@ -51,11 +53,13 @@ function mapVegetable(record: SupabaseVegetable): Vegetable {
 		id: record.id,
 		slug: record.slug,
 		name: record.name,
+		chineseName: record.chinese_name,
 		category: record.category,
 		seasons: record.seasons,
 		description: record.description,
 		origin: record.origin,
 		nutritionalHighlights: record.nutritional_highlights,
+		benefitsForThreeHighs: record.benefits_for_three_highs,
 		image: record.image,
 	};
 }

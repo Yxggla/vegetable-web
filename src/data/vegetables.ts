@@ -1,22 +1,29 @@
 export type VegetableCategory =
 	| "Leafy greens"
-	| "Roots"
-	| "Cruciferous"
-	| "Nightshades"
-	| "Legumes"
-	| "Alliums";
+	| "Cruciferous vegetables"
+	| "Cucurbitaceous vegetables"
+	| "Allium vegetables"
+	| "Edible fungi"
+	| "Root vegetables";
 
-export type GrowingSeason = "Spring" | "Summer" | "Autumn" | "Winter";
+export type GrowingSeason =
+	| "Spring"
+	| "Summer"
+	| "Autumn"
+	| "Winter"
+	| "All year round";
 
 export type Vegetable = {
 	id?: string;
 	slug: string;
 	name: string;
+	chineseName: string;
 	category: VegetableCategory;
 	seasons: GrowingSeason[];
 	description: string;
 	origin: string;
 	nutritionalHighlights: string[];
+	benefitsForThreeHighs: string[];
 	image: string;
 };
 
@@ -24,133 +31,125 @@ export const vegetables: Vegetable[] = [
 	{
 		slug: "spinach",
 		name: "Spinach",
+		chineseName: "菠菜",
 		category: "Leafy greens",
 		seasons: ["Spring", "Autumn", "Winter"],
 		description:
-			"Tender leaves rich in iron and folate, perfect for fresh salads or quick sautés.",
+			"Tender leaves rich in iron, folate and potassium, perfect for fresh salads, quick sautés or light soups. Friendly for people with hypertension, hyperglycemia and hyperlipidemia.",
 		origin: "Central and Western Asia",
-		nutritionalHighlights: ["Iron", "Vitamin K", "Folate"],
+		nutritionalHighlights: [
+			"Iron",
+			"Vitamin K",
+			"Folate",
+			"Potassium",
+			"Dietary Fiber",
+		],
+		benefitsForThreeHighs: [
+			"Potassium regulates blood pressure",
+			"Dietary fiber slows sugar absorption",
+			"Low calorie & low fat",
+			"Magnesium protects blood vessel elasticity",
+		],
 		image: "/vegetables/spinach.jpg",
-	},
-	{
-		slug: "kale",
-		name: "Kale",
-		category: "Leafy greens",
-		seasons: ["Autumn", "Winter"],
-		description:
-			"Hearty leaves with a peppery finish, ideal for smoothies, chips, or braised dishes.",
-		origin: "Mediterranean basin",
-		nutritionalHighlights: ["Vitamin C", "Calcium", "Antioxidants"],
-		image: "/vegetables/kale.jpg",
-	},
-	{
-		slug: "carrot",
-		name: "Carrot",
-		category: "Roots",
-		seasons: ["Spring", "Summer", "Autumn"],
-		description:
-			"Crisp sweetness with vibrant color, versatile for raw snacks, roasting, or purees.",
-		origin: "Central Asia",
-		nutritionalHighlights: ["Beta-carotene", "Fiber", "Vitamin A"],
-		image: "/vegetables/carrot.jpg",
-	},
-	{
-		slug: "beetroot",
-		name: "Beetroot",
-		category: "Roots",
-		seasons: ["Summer", "Autumn"],
-		description:
-			"Earthy roots with natural sweetness, great for roasting, pickling, or juicing.",
-		origin: "Mediterranean region",
-		nutritionalHighlights: ["Nitrates", "Manganese", "Folate"],
-		image: "/vegetables/beetroot.jpg",
 	},
 	{
 		slug: "broccoli",
 		name: "Broccoli",
-		category: "Cruciferous",
-		seasons: ["Autumn", "Winter"],
+		chineseName: "西兰花",
+		category: "Cruciferous vegetables",
+		seasons: ["Spring", "Autumn"],
 		description:
-			"Tightly packed florets with a mild flavor, perfect for steaming, roasting, or stir-fries.",
-		origin: "Southern Italy",
-		nutritionalHighlights: ["Vitamin C", "Fiber", "Sulforaphane"],
+			"Compact green florets packed with nutrients, ideal for stir-frying, steaming or boiling. Helps control cholesterol and blood sugar levels.",
+		origin: "Mediterranean region",
+		nutritionalHighlights: ["Vitamin C", "Dietary Fiber", "Vitamin E", "Calcium"],
+		benefitsForThreeHighs: [
+			"Soluble fiber lowers cholesterol",
+			"Low glycemic index stabilizes blood sugar",
+			"Antioxidants protect blood vessels",
+			"Low sodium & high potassium",
+		],
 		image: "/vegetables/broccoli.jpg",
 	},
 	{
-		slug: "cauliflower",
-		name: "Cauliflower",
-		category: "Cruciferous",
+		slug: "winter-melon",
+		name: "Winter Melon",
+		chineseName: "冬瓜",
+		category: "Cucurbitaceous vegetables",
 		seasons: ["Autumn", "Winter"],
 		description:
-			"Snowy florets and tender stalks that absorb seasoning well, from whole roasts to rice bowls.",
-		origin: "Cyprus",
-		nutritionalHighlights: ["Choline", "Vitamin C", "Fiber"],
-		image: "/vegetables/cauliflower.jpg",
+			"Crisp, watery flesh with mild flavor, great for soups, stews or stir-fries. Almost fat-free and low in calories.",
+		origin: "Southern Asia",
+		nutritionalHighlights: ["Potassium", "Vitamin C", "Dietary Fiber", "Magnesium"],
+		benefitsForThreeHighs: [
+			"Diuretic effect reduces vascular pressure",
+			"Zero fat & low calorie",
+			"High water content promotes metabolism",
+			"Fiber aids in lipid metabolism",
+		],
+		image: "/vegetables/winter-melon.jpg",
 	},
 	{
-		slug: "tomato",
-		name: "Tomato",
-		category: "Nightshades",
-		seasons: ["Summer"],
+		slug: "onion",
+		name: "Onion",
+		chineseName: "洋葱",
+		category: "Allium vegetables",
+		seasons: ["All year round"],
 		description:
-			"Sun-ripened fruit with umami depth, essential for sauces, salads, and fresh snacking.",
-		origin: "Western South America",
-		nutritionalHighlights: ["Lycopene", "Vitamin C", "Potassium"],
-		image: "/vegetables/tomato.jpg",
+			"Pungent bulb with layers, suitable for stir-frying, roasting or raw consumption. Contains unique compounds beneficial for blood pressure and lipid control.",
+		origin: "Southwest Asia",
+		nutritionalHighlights: [
+			"Sulfur compounds",
+			"Vitamin C",
+			"Potassium",
+			"Dietary Fiber",
+		],
+		benefitsForThreeHighs: [
+			"Sulfur compounds relax blood vessels",
+			"Lowers bad cholesterol (LDL)",
+			"Regulates blood sugar",
+			"Antioxidants reduce vascular inflammation",
+		],
+		image: "/vegetables/onion.jpg",
 	},
 	{
-		slug: "eggplant",
-		name: "Eggplant",
-		category: "Nightshades",
-		seasons: ["Summer", "Autumn"],
-		description:
-			"Silky texture when cooked, with smoky notes ideal for grilling, roasting, or braising.",
-		origin: "India",
-		nutritionalHighlights: ["Fiber", "Nasunin", "Manganese"],
-		image: "/vegetables/eggplant.jpg",
-	},
-	{
-		slug: "snap-pea",
-		name: "Snap pea",
-		category: "Legumes",
-		seasons: ["Spring", "Summer"],
-		description:
-			"Crisp pods packed with sweetness, enjoyed raw, lightly cooked, or tossed into stir-fries.",
-		origin: "Mediterranean basin",
-		nutritionalHighlights: ["Protein", "Vitamin C", "Fiber"],
-		image: "/vegetables/snap-pea.jpg",
-	},
-	{
-		slug: "chickpea",
-		name: "Chickpea",
-		category: "Legumes",
-		seasons: ["Summer", "Autumn"],
-		description:
-			"Nutrient-dense pulses used in spreads, salads, and stews with creamy texture when cooked.",
-		origin: "Fertile Crescent",
-		nutritionalHighlights: ["Protein", "Folate", "Fiber"],
-		image: "/vegetables/chickpea.jpg",
-	},
-	{
-		slug: "garlic",
-		name: "Garlic",
-		category: "Alliums",
+		slug: "wood-ear-fungus",
+		name: "Wood Ear Fungus",
+		chineseName: "木耳",
+		category: "Edible fungi",
 		seasons: ["Autumn", "Winter"],
 		description:
-			"Aromatic bulbs that transform dishes with depth, whether roasted, sautéed, or raw.",
-		origin: "Central Asia",
-		nutritionalHighlights: ["Allicin", "Manganese", "Vitamin B6"],
-		image: "/vegetables/garlic.jpg",
+			"Chewy, black or brown fungus, often used in stir-fries or soups. Rich in soluble fiber.",
+		origin: "East Asia",
+		nutritionalHighlights: ["Dietary Fiber", "Iron", "Calcium", "Vitamin K"],
+		benefitsForThreeHighs: [
+			"Fiber adsorbs fat & cholesterol",
+			"Slows glucose absorption",
+			"Low calorie & low sugar",
+			"Promotes intestinal detoxification",
+		],
+		image: "/vegetables/wood-ear-fungus.jpg",
 	},
 	{
-		slug: "scallion",
-		name: "Scallion",
-		category: "Alliums",
-		seasons: ["Spring", "Summer"],
+		slug: "chinese-yam",
+		name: "Chinese Yam",
+		chineseName: "山药",
+		category: "Root vegetables",
+		seasons: ["Autumn", "Winter"],
 		description:
-			"Mild onion flavor with crisp stalks, perfect for garnishes, stir-fries, and broths.",
-		origin: "Central Asia",
-		nutritionalHighlights: ["Vitamin K", "Vitamin C", "Fiber"],
-		image: "/vegetables/scallion.jpg",
+			"Creamy, starchy flesh with mild sweetness, good for boiling, steaming or stir-frying. Gentle on digestion.",
+		origin: "East Asia",
+		nutritionalHighlights: [
+			"Mucus protein",
+			"Dietary Fiber",
+			"Potassium",
+			"Vitamin B group",
+		],
+		benefitsForThreeHighs: [
+			"Mucus protein delays blood sugar rise",
+			"Low glycemic load",
+			"Fiber regulates lipid metabolism",
+			"Supports digestive health to reduce metabolic burden",
+		],
+		image: "/vegetables/chinese-yam.jpg",
 	},
 ];

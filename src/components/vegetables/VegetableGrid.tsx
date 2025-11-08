@@ -42,28 +42,38 @@ export function VegetableGrid({ items }: Props) {
 		};
 	}, [user, setFavorites]);
 
-	const filtered = useMemo(() => {
-		return items.filter((item) => {
-			const matchesCategory =
-				filters.category === "All" || item.category === filters.category;
-			const matchesSeason =
-				filters.season === "All" || item.seasons.includes(filters.season);
-			const query = filters.search.trim().toLowerCase();
-			const matchesSearch =
-				query.length === 0 ||
-				item.name.toLowerCase().includes(query) ||
-				item.origin.toLowerCase().includes(query);
+		const filtered = useMemo(() => {
+			return items.filter((item) => {
+				const matchesCategory =
+					filters.category === "All" || item.category === filters.category;
+				const matchesSeason =
+					filters.season === "All" || item.seasons.includes(filters.season);
+				const query = filters.search.trim().toLowerCase();
+				const searchableFields = [
+					item.name,
+					item.chineseName,
+					item.origin,
+					item.description,
+					item.category,
+					...item.nutritionalHighlights,
+					...item.benefitsForThreeHighs,
+				];
+				const matchesSearch =
+					query.length === 0 ||
+					searchableFields.some((field) =>
+						field.toLowerCase().includes(query),
+					);
 
-			return matchesCategory && matchesSeason && matchesSearch;
-		});
-	}, [filters, items]);
+				return matchesCategory && matchesSeason && matchesSearch;
+			});
+		}, [filters, items]);
 
 	if (filtered.length === 0) {
 		return <NoResults />;
 	}
 
 	return (
-		<div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+		<div className="grid gap-6 md:grid-cols-2">
 			{filtered.map((item) => (
 				<VegetableCard key={item.slug} item={item} />
 			))}

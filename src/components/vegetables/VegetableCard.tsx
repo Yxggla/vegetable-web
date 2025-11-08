@@ -109,44 +109,57 @@ export function VegetableCard({ item, onFavoriteChange }: Props) {
 				</button>
 			</div>
 			<div className="flex flex-1 flex-col space-y-4 p-6">
-				<div className="space-y-1">
-					<div className="flex items-center justify-between">
-						<h3 className="text-lg font-semibold text-gray-900">{item.name}</h3>
-						<span className="rounded-full border border-green-200 px-3 py-1 text-xs font-semibold text-green-600">
-							{item.category}
-						</span>
+			<div className="space-y-1">
+				<div className="flex items-start justify-between gap-4">
+					<div>
+						<h3 className="text-lg font-semibold text-gray-900">
+							{item.name}
+						</h3>
+						<p className="text-sm font-medium text-green-700">
+							{item.chineseName}
+						</p>
 					</div>
-					<p className="text-sm text-gray-500">{item.origin}</p>
+					<span className="rounded-full border border-green-200 px-3 py-1 text-xs font-semibold text-green-600">
+						{item.category}
+					</span>
 				</div>
+				<p className="text-sm text-gray-500">{item.origin}</p>
+			</div>
 				<p className="flex-1 text-sm leading-6 text-gray-600">
 					{item.description}
 				</p>
-				<div className="space-y-2">
-					<p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
-						Nutritional highlights
-					</p>
-					<ul className="flex flex-wrap gap-2 text-xs">
-						{item.nutritionalHighlights.map((highlight) => (
-							<li
-								key={highlight}
-								className="rounded-full border border-green-100 bg-green-50 px-3 py-1 font-medium text-green-700"
-							>
-								{highlight}
-							</li>
-						))}
-					</ul>
-				</div>
-				<div className="flex items-center justify-between text-xs font-medium text-gray-500">
-					<span>
-					{item.seasons.join(" • ")}
-					</span>
-					{isFavorite ? (
-						<span className="text-green-600">In favorites</span>
-					) : (
-						<span>Add to favorites</span>
-					)}
-				</div>
+			<div className="space-y-2">
+				<p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+					Nutritional highlights
+				</p>
+				<ul className="flex flex-wrap gap-2 text-xs">
+					{item.nutritionalHighlights.map((highlight) => (
+						<li
+							key={highlight}
+							className="rounded-full border border-green-100 bg-green-50 px-3 py-1 font-medium text-green-700"
+						>
+							{highlight}
+						</li>
+					))}
+				</ul>
 			</div>
-		</article>
-	);
+			<div className="space-y-2">
+				<p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+					Benefits for Three Highs
+				</p>
+				<ul className="space-y-1 text-sm text-gray-600">
+					{item.benefitsForThreeHighs.map((benefit) => (
+						<li key={benefit} className="flex items-start gap-2">
+							<span className="mt-1 h-1.5 w-1.5 rounded-full bg-green-500"></span>
+							<span>{benefit}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+			<div className="text-xs font-medium text-gray-500">
+				{item.seasons.join(" • ")}
+			</div>
+		</div>
+	</article>
+);
 }
