@@ -13,7 +13,7 @@ export default function RecipesPage() {
 			title="Weekly vegetable recipes"
 			description="Plan seven days of nutrient-dense dishes curated from seasonal produce. Each card includes a theme, spotlight dish, and quick prep tip."
 		>
-			<section className="pt-10 pb-20">
+			<section className="pt-4 ">
 				<div className="mx-auto flex max-w-6xl flex-col px-4 sm:px-6 lg:px-8">
 					<WeeklyRecipeStack recipes={weeklyRecipes} />
 				</div>
