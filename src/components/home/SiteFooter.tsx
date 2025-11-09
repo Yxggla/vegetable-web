@@ -1,9 +1,22 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function SiteFooter() {
 	return (
-		<footer id="contact" className="bg-gray-900 text-white py-12">
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<footer id="contact" className="relative overflow-hidden bg-gray-900 text-white py-12">
+			<div className="pointer-events-none absolute inset-0">
+				<Image
+					src="/images/footer/footer.PNG"
+					alt="Footer decorative background"
+					fill
+					sizes="100vw"
+					className="object-cover opacity-60"
+					priority
+				/>
+				<div className="absolute inset-0 bg-linear-to-t from-gray-900 via-gray-900/60 to-transparent" />
+			</div>
+
+			<div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="grid md:grid-cols-4 gap-8">
 					<div>
 						<h3 className="text-xl font-bold mb-4">VegetableWeb</h3>
@@ -79,4 +92,3 @@ export function SiteFooter() {
 		</footer>
 	);
 }
-

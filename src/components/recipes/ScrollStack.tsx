@@ -18,7 +18,7 @@ export const ScrollStackItem: React.FC<ScrollStackItemProps> = ({
 	itemClassName = "",
 }) => (
 	<div
-		className={`scroll-stack-card relative w-full min-h-[32rem] lg:min-h-[40rem] my-8 p-12 rounded-[40px] shadow-[0_0_30px_rgba(0,0,0,0.12)] bg-white/90 box-border origin-top will-change-transform ${itemClassName}`.trim()}
+		className={`scroll-stack-card relative w-full min-h-[22rem] lg:min-h-[28rem] my-4 p-6 rounded-[28px] shadow-[0_8px_30px_rgba(0,0,0,0.08)] bg-white/95 box-border origin-top will-change-transform ${itemClassName}`.trim()}
 		style={{
 			backfaceVisibility: "hidden",
 			transformStyle: "preserve-3d",
@@ -53,7 +53,7 @@ type CardTransform = {
 const ScrollStack: React.FC<ScrollStackProps> = ({
 	children,
 	className = "",
-	itemDistance = 100,
+	itemDistance = 50,
 	itemScale = 0.03,
 	itemStackDistance = 30,
 	stackPosition = "20%",
