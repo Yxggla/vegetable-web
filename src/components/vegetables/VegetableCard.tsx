@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Vegetable } from "@/data/vegetables";
 import { useVegetableStore } from "@/store/vegetableStore";
@@ -55,12 +54,13 @@ export function VegetableCard({ item, onFavoriteChange }: Props) {
 
 	return (
 		<article className="group relative flex flex-col overflow-hidden rounded-3xl border border-green-100 bg-white/80 shadow-sm backdrop-blur transition hover:-translate-y-1 hover:shadow-lg">
-			<div className="relative h-48 w-full overflow-hidden bg-green-50">
-				<Image
+			<div className="relative h-48 w-full overflow-hidden bg-green-50 flex items-center justify-center">
+				<img
 					src={item.image}
 					alt={item.name}
-					fill
-					className="object-cover transition duration-500 group-hover:scale-105"
+					className="h-full w-auto transition duration-500 group-hover:scale-105"
+					loading="lazy"
+					decoding="async"
 				/>
 				<button
 					type="button"

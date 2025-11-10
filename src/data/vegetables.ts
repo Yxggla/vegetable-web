@@ -50,7 +50,7 @@ export const vegetables: Vegetable[] = [
 			"Low calorie & low fat",
 			"Magnesium protects blood vessel elasticity",
 		],
-		image: "/vegetables/spinach.jpg",
+		image: "/images/vegetables/spinach.PNG",
 	},
 	{
 		slug: "broccoli",
@@ -68,7 +68,7 @@ export const vegetables: Vegetable[] = [
 			"Antioxidants protect blood vessels",
 			"Low sodium & high potassium",
 		],
-		image: "/vegetables/broccoli.jpg",
+		image: "/images/vegetables/broccoli.PNG",
 	},
 	{
 		slug: "winter-melon",
@@ -86,7 +86,7 @@ export const vegetables: Vegetable[] = [
 			"High water content promotes metabolism",
 			"Fiber aids in lipid metabolism",
 		],
-		image: "/vegetables/winter-melon.jpg",
+		image: "/images/vegetables/winter-melon.PNG",
 	},
 	{
 		slug: "onion",
@@ -109,7 +109,7 @@ export const vegetables: Vegetable[] = [
 			"Regulates blood sugar",
 			"Antioxidants reduce vascular inflammation",
 		],
-		image: "/vegetables/onion.jpg",
+		image: "/images/vegetables/onion.png.PNG",
 	},
 	{
 		slug: "wood-ear-fungus",
@@ -127,7 +127,7 @@ export const vegetables: Vegetable[] = [
 			"Low calorie & low sugar",
 			"Promotes intestinal detoxification",
 		],
-		image: "/vegetables/wood-ear-fungus.jpg",
+		image: "/images/vegetables/wood-ear-fungus.PNG",
 	},
 	{
 		slug: "chinese-yam",
@@ -150,6 +150,6 @@ export const vegetables: Vegetable[] = [
 			"Fiber regulates lipid metabolism",
 			"Supports digestive health to reduce metabolic burden",
 		],
-		image: "/vegetables/chinese-yam.jpg",
+		image: "/images/vegetables/chinese-yam.PNG",
 	},
 ];
