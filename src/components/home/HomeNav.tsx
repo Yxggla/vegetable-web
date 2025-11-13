@@ -26,7 +26,7 @@ export function HomeNav() {
 			<div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 sm:px-6 lg:px-8">
 				<div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 					<PillNav
-						logo="/logo.PNG"
+						logo="/logo.png"
 						logoAlt="VegetableWeb"
 						items={primaryNavItems}
 						activeHref={pathname}
