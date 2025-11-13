@@ -20,6 +20,7 @@ export function HeroSection() {
 							Watch Demo
 						</button>
 					</div>
+					<video src="/videos/home.mp4" autoPlay muted loop className="w-full h-full object-cover"></video>
 				</div>
 			</div>
 		</section>
