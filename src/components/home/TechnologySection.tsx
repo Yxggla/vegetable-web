@@ -11,22 +11,22 @@ const features = [
 		description: "Short explainers on why certain greens aid digestion or support immunity.",
 		iconPath:
 			"M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
-		containerClass: "bg-blue-50",
-		badgeClass: "bg-blue-600",
+		containerClass: "bg-green-50",
+		badgeClass: "bg-green-700",
 	},
 	{
 		title: "Seasonal highlights",
 		description: "What’s in peak condition now, with flavor cues and storage guidance to keep it fresh.",
 		iconPath:
 			"M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
-		containerClass: "bg-purple-50",
-		badgeClass: "bg-purple-600",
+		containerClass: "bg-green-50",
+		badgeClass: "bg-green-800",
 	},
 ];
 
 export function TechnologySection() {
 	return (
-		<section id="technology" className="py-20 bg-white">
+		<section id="technology" className="py-20 ">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-16">
 					<h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -69,7 +69,7 @@ export function TechnologySection() {
 					))}
 				</div>
 
-				<div className="mt-16 rounded-3xl bg-gradient-to-r from-green-600 to-blue-600 p-10 text-white">
+				<div className="mt-16 rounded-3xl bg-linear-to-b from-[#2a8e56] to-[#42ad8c] p-10 text-white">
 					<div className="grid md:grid-cols-2 gap-10">
 						<div>
 							<h3 className="text-2xl font-semibold">VegWell Guide Hub</h3>
