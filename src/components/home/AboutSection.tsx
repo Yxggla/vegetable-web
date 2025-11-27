@@ -49,8 +49,7 @@ export function AboutSection() {
 								className="mx-auto"
 							/>
 							<p className="mt-6 text-center text-sm text-gray-500">
-								Predictable harvests, guaranteed freshness, and transparent
-								sourcing for every partner.
+							Fresh, transparent, and nutrition you can trust.
 							</p>
 						</div>
 					</div>
