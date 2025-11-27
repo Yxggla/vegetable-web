@@ -18,7 +18,7 @@ export default function Home() {
 			<ImpactSection />
 			<ProductsSection />
 			<TestimonialsSection />
-			<CtaSection />
+			{/* <CtaSection /> */}
 			<SiteFooter />
 		</div>
 	);

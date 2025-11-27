@@ -20,8 +20,8 @@ export function SiteFooter() {
 				<div className="grid md:grid-cols-3 gap-8">
 					<div>
 						<h3 className="text-xl font-bold mb-4">VegetableWeb</h3>
-						<p className="text-gray-300">City-first farming for fresh produce near every block.</p>
-						<p className="mt-2 text-sm text-green-100">Fresh. Measurable. Local.</p>
+						<p className="text-gray-300">Your guide to vegetables, nutrition, and simple recipes.</p>
+						<p className="mt-2 text-sm text-green-100">Learn it. Cook it. Enjoy it.</p>
 					</div>
 					<div>
 						<h4 className="font-semibold mb-4">Explore</h4>
@@ -66,25 +66,19 @@ export function SiteFooter() {
 							<li>
 								<a
 									href="mailto:hello@vegetableweb.com"
-									className="hover:text-white transition-colors"
-								>
-									hello@vegetableweb.com
-								</a>
+								className="hover:text-white transition-colors"
+							>
+								hello@vegetableweb.com
+							</a>
 							</li>
 							<li>
-								<a
-									href="tel:+15551234567"
-									className="hover:text-white transition-colors"
-								>
-									+1 (555) 123-4567
-								</a>
+								<span className="text-gray-300">We&apos;re here to help you cook more vegetables.</span>
 							</li>
-							<li>New York, deploying globally</li>
 						</ul>
 					</div>
 				</div>
 				<div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-					<p>&copy; 2024 VegetableWeb. Built by growers, engineers, and partners.</p>
+					<p>&copy; 2024 VegetableWeb. Built for home cooks.</p>
 				</div>
 			</div>
 		</footer>

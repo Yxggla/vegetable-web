@@ -6,12 +6,11 @@ export function CtaSection() {
 					<div className="md:flex md:items-center md:justify-between">
 						<div className="max-w-xl">
 							<h2 className="text-3xl font-bold">
-								Bring VegetableWeb to your city
+								Get weekly veggie + recipe tips
 							</h2>
 							<p className="mt-3 text-green-100">
-								Let&apos;s design a farm that fits your demand. Share a few
-								details and our team will prepare a tailored deployment plan
-								within 48 hours.
+								Short emails with seasonal vegetables, quick prep tricks, and
+								healthy recipes. No ads, no sales—just ideas for your next meal.
 							</p>
 						</div>
 						<form className="mt-8 md:mt-0 md:w-80 space-y-3">
@@ -38,7 +37,7 @@ export function CtaSection() {
 								type="submit"
 								className="w-full rounded-lg bg-white px-4 py-3 text-sm font-semibold text-green-700 shadow-sm hover:bg-green-50 transition-colors"
 							>
-								Schedule Strategy Call
+								Subscribe
 							</button>
 						</form>
 					</div>
@@ -47,4 +46,3 @@ export function CtaSection() {
 		</section>
 	);
 }
-

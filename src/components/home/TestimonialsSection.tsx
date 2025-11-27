@@ -1,21 +1,21 @@
 const testimonials = [
 	{
-		name: "Chef Lucia Martinez",
-		role: "Owner, Verde Bistro",
+		name: "Jamie L.",
+		role: "Home cook & busy parent",
 		quote:
-			"The basil and baby greens arrive with consistent flavor every delivery. Our guests can taste the difference.",
+			"I used to overcook greens. The doneness cues and quick swaps mean dinner stays bright and my kids actually eat it.",
 	},
 	{
-		name: "Jordan Blake",
-		role: "Director, Metro Food Bank",
+		name: "Priya M.",
+		role: "Nutrition-minded meal prepper",
 		quote:
-			"VegetableWeb helps us keep nutritious produce available year-round, even during supply chain disruptions.",
+			"Love the nutrition snapshots and storage tips—less waste, faster prep, healthier lunches.",
 	},
 	{
-		name: "Priya Mehta",
-		role: "Sustainability Officer, FreshMart",
+		name: "Alex G.",
+		role: "Beginner cook",
 		quote:
-			"We cut food waste in half after integrating VegetableWeb farms directly into our urban distribution centers.",
+			"Recipes are simple and forgiving. The flavor notes help me swap ingredients without ruining the dish.",
 	},
 ];
 
@@ -25,11 +25,11 @@ export function TestimonialsSection() {
 			<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-14">
 					<h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-						Trusted by chefs, grocers, and community leaders
+						Trusted by home cooks
 					</h2>
 					<p className="mt-4 text-lg text-gray-600">
-						Our partners rely on VegetableWeb to deliver consistent quality and
-						resilient supply chains.
+						Real feedback from people using VegWell to cook more vegetables,
+						with less stress.
 					</p>
 				</div>
 				<div className="grid gap-6 md:grid-cols-3">
@@ -56,4 +56,3 @@ export function TestimonialsSection() {
 		</section>
 	);
 }
-

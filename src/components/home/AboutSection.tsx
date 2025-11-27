@@ -7,35 +7,33 @@ export function AboutSection() {
 				<div className="grid lg:grid-cols-2 gap-16 items-center">
 					<div>
 						<span className="inline-flex items-center rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-700">
-							Urban farming reimagined
+							Eat better, starting with vegetables you understand
 						</span>
 						<h2 className="mt-6 text-3xl md:text-4xl font-bold text-gray-900">
-							From seed to store in the heart of the city
+							Simple guides for picking, prepping, and cooking
 						</h2>
 						<p className="mt-4 text-lg text-gray-600">
-							VegetableWeb combines modular indoor farms with smart operations
-							software to deliver hyper-local vegetables in any neighborhood.
-							Every farm is powered by renewable energy, monitored 24/7 by
-							sensor networks, and managed by growers with decades of
-							experience.
+							We break down every vegetable with flavor notes, quick prep tips,
+							and recipe ideas that keep nutrients intact. No jargon—just
+							kitchen-friendly advice you can use tonight.
 						</p>
 						<div className="mt-8 grid sm:grid-cols-2 gap-6">
 							<div className="rounded-lg border border-green-100 bg-white p-6 shadow-sm">
 								<h3 className="text-lg font-semibold text-gray-900">
-									Closed-loop systems
+									Flavor & texture profiles
 								</h3>
 								<p className="mt-2 text-sm text-gray-600">
-									Water recirculation and nutrient recovery keep inputs low while
-									protecting local ecosystems.
+									Know when to sauté, roast, or eat raw based on crunch, sweetness,
+									and aroma.
 								</p>
 							</div>
 							<div className="rounded-lg border border-blue-100 bg-white p-6 shadow-sm">
 								<h3 className="text-lg font-semibold text-gray-900">
-									Data-driven quality
+									Prep & storage shortcuts
 								</h3>
 								<p className="mt-2 text-sm text-gray-600">
-									Bespoke dashboards track growth cycles, flavor profiles, and
-									harvest windows in real time.
+									Faster washing, chopping, and keep-fresh steps that cut waste and
+									save weeknight time.
 								</p>
 							</div>
 						</div>
@@ -61,4 +59,3 @@ export function AboutSection() {
 		</section>
 	);
 }
-

@@ -1,28 +1,34 @@
+import Link from "next/link";
+
 export function HeroSection() {
 	return (
-		<section className="relative py-20 lg:py-32">
+		<section className="relative pb-12 pt-6">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center">
-					<h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-						Revolutionizing
-						<span className="text-green-600 block">Agriculture</span>
-					</h1>
-					<p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-						Sustainable vertical farming technology that produces fresh,
-						nutritious vegetables year-round using 95% less water than
-						traditional farming.
+					<img
+						src="/images/hero.PNG"
+						alt="Hero Image"
+						className="mx-auto block w-1/2 object-cover"
+					/>
+					<p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+					Discover the nutrition, flavors, and growth stories behind vegetables — because health begins with understanding.
 					</p>
 					<div className="flex flex-col sm:flex-row gap-4 justify-center">
-						<button className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+						<Link
+							href="/vegetables"
+							className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+						>
 							Learn More
-						</button>
-						<button className="border border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors">
-							Watch Demo
-						</button>
+						</Link>
+						<Link
+							href="/recipes"
+							className="inline-flex items-center justify-center border border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
+						>
+							Explore Recipes
+						</Link>
 					</div>
 				</div>
 			</div>
 		</section>
 	);
 }
-

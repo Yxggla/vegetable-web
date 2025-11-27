@@ -1,30 +1,27 @@
 const stats = [
-	{ value: "95%", label: "Less Water Used" },
-	{ value: "3x", label: "Higher Yield" },
-	{ value: "12", label: "Harvests / Year" },
-	{ value: "80%", label: "Less Food Waste" },
+	{ value: "120+", label: "Veggie tips & mini-guides" },
+	{ value: "150+", label: "Home-cook friendly recipes" },
+	{ value: "10 min", label: "Avg. prep time per recipe" },
+	{ value: "0", label: "Pesticide claims or sales" },
 ];
 
 const workflow = [
 	{
-		title: "Plan & Predict",
-		description:
-			"AI-driven demand forecasting aligns crops with community demand before seeds hit the trays.",
+		title: "Browse by vegetable",
+		description: "See flavor notes, nutrition, and best cooking methods in seconds.",
 		iconClass: "text-green-600",
 		iconPath:
 			"M13 16h-1v-4h-1m1-4h.01M5.455 20h13.09A2.455 2.455 0 0021 17.545V6.455A2.455 2.455 0 0018.545 4H5.455A2.455 2.455 0 003 6.455v11.09A2.455 2.455 0 005.455 20z",
 	},
 	{
-		title: "Grow & Monitor",
-		description:
-			"Autonomous lighting, irrigation, and climate systems keep every microgreen in optimal conditions.",
+		title: "Pick a recipe",
+		description: "Filter by time, skill level, or dietary needs—every step spelled out.",
 		iconClass: "text-blue-600",
 		iconPath: "M4 6h16M4 12h16M4 18h16",
 	},
 	{
-		title: "Harvest & Deliver",
-		description:
-			"Fully traceable produce packaged on-site and delivered within hours for peak freshness.",
+		title: "Cook with confidence",
+		description: "Swap-friendly ingredients and doneness cues keep meals bright and healthy.",
 		iconClass: "text-purple-600",
 		iconPath: "M3 10h18M7 21h10M12 3v7m-7 0v11m14-11v11",
 	},
@@ -36,11 +33,11 @@ export function ImpactSection() {
 			<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center">
 					<h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-						Measurable climate impact
+						Healthier meals, less guesswork
 					</h2>
 					<p className="mt-4 text-lg text-gray-600">
-						Every VegetableWeb farm is engineered to keep communities fed while
-						pushing agriculture toward net-zero emissions.
+						VegWell is an open guide to vegetables and home cooking. No sales,
+						no farming—just clear, reliable information and recipes.
 					</p>
 				</div>
 				<div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -90,4 +87,3 @@ export function ImpactSection() {
 		</section>
 	);
 }
-

@@ -1,25 +1,22 @@
 const features = [
 	{
-		title: "AI-Powered",
-		description:
-			"Machine learning algorithms optimize growing conditions for maximum yield and quality.",
+		title: "Nutrition at a glance",
+		description: "Calories, fiber, and key vitamins summarized so you can pair dishes smartly.",
 		iconPath: "M13 10V3L4 14h7v7l9-11h-7z",
 		containerClass: "bg-green-50",
 		badgeClass: "bg-green-600",
 	},
 	{
-		title: "Precision Growing",
-		description:
-			"Controlled environment agriculture with precise nutrient and lighting control.",
+		title: "Step-by-step cooking",
+		description: "Heat levels, timing, and seasoning baselines to keep veggies crisp and bright.",
 		iconPath:
 			"M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
 		containerClass: "bg-blue-50",
 		badgeClass: "bg-blue-600",
 	},
 	{
-		title: "Sustainable",
-		description:
-			"95% less water usage and zero pesticides for environmentally friendly farming.",
+		title: "Seasonal highlights",
+		description: "Which vegetables are tasting best right now, and simple ways to use them.",
 		iconPath:
 			"M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
 		containerClass: "bg-purple-50",
@@ -33,11 +30,11 @@ export function TechnologySection() {
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-16">
 					<h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-						Advanced Technology
+						A clear path from vegetable to plate
 					</h2>
 					<p className="text-xl text-gray-600 max-w-2xl mx-auto">
-						Our proprietary technology combines AI, robotics, and precision
-						agriculture to grow the highest quality produce.
+						We organize veggie knowledge so you don&apos;t have to guess: what to
+						buy, how to prep, and when to season for the best flavor.
 					</p>
 				</div>
 
@@ -75,19 +72,17 @@ export function TechnologySection() {
 				<div className="mt-16 rounded-3xl bg-gradient-to-r from-green-600 to-blue-600 p-10 text-white">
 					<div className="grid md:grid-cols-2 gap-10">
 						<div>
-							<h3 className="text-2xl font-semibold">Integrated Command Hub</h3>
+							<h3 className="text-2xl font-semibold">VegWell Guide Hub</h3>
 							<p className="mt-3 text-sm md:text-base text-green-50">
-								The VegetableWeb OS unifies production planning, supplier
-								coordination, and distribution logistics. Predictive alerts help
-								growers act before issues impact quality, while customers gain
-								full transparency through shared dashboards.
+								Save your favorite vegetables, bookmark recipes, and keep quick
+								reference cards for texture, nutrition, and prep.
 							</p>
 						</div>
 						<div className="space-y-4 text-sm md:text-base text-green-50">
 							{[
-								"Digital twins simulate plant growth to fine-tune lighting schedules.",
-								"Fleet automation aligns last-mile delivery with peak nutrient profiles.",
-								"API integrations connect procurement, POS, and sustainability reporting.",
+								"Flavor-safe timers and doneness cues for sauté, roast, and steam.",
+								"Swap suggestions when you’re missing an ingredient but want the same profile.",
+								"Allergens and nutrition called out in plain language—no guessing.",
 							].map((item, index) => (
 								<div key={item} className="flex items-start gap-3">
 									<span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/10 text-sm font-semibold">
@@ -103,4 +98,3 @@ export function TechnologySection() {
 		</section>
 	);
 }
-
