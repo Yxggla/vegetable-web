@@ -2,22 +2,22 @@ const products = [
 	{
 		name: "Butter Lettuce",
 		image: "🥬",
-		description: "Soft, sweet leaves—best for wraps and light salads.",
+		description: "Soft, sweet leaves with gentle crunch; naturally high in vitamin A.",
 	},
 	{
 		name: "Basil",
 		image: "🌿",
-		description: "Bright and aromatic; add off-heat to keep the oils vivid.",
+		description: "Bright aroma with calming oils; pairs well with tomato and citrus.",
 	},
 	{
 		name: "Kale",
 		image: "🥬",
-		description: "Hearty texture; massage with oil or roast for crisp edges.",
+		description: "Sturdy leaves rich in vitamin K and antioxidants; mild, earthy finish.",
 	},
 	{
 		name: "Arugula",
 		image: "🌱",
-		description: "Peppery bite that pairs with citrus and creamy dressings.",
+		description: "Peppery greens with a light bite; a source of folate and calcium.",
 	},
 ];
 
@@ -30,8 +30,8 @@ export function ProductsSection() {
 						Veggie library
 					</h2>
 					<p className="text-xl text-gray-600 max-w-2xl mx-auto">
-						Get tasting notes, prep steps, and recipe ideas for everyday greens
-						and herbs—no shopping cart, just guidance.
+						Get nutrition callouts, benefits, and flavor notes for everyday
+						greens and herbs—no shopping cart, just guidance.
 					</p>
 				</div>
 

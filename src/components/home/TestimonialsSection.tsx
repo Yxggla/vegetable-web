@@ -3,19 +3,19 @@ const testimonials = [
 		name: "Jamie L.",
 		role: "Home cook & busy parent",
 		quote:
-			"I used to overcook greens. The doneness cues and quick swaps mean dinner stays bright and my kids actually eat it.",
+			"I finally understand which greens help with iron and which ones are lighter—makes grocery runs easier.",
 	},
 	{
 		name: "Priya M.",
 		role: "Nutrition-minded meal prepper",
 		quote:
-			"Love the nutrition snapshots and storage tips—less waste, faster prep, healthier lunches.",
+			"Love the quick nutrition snapshots and storage notes. I waste less and pick what fits my goals.",
 	},
 	{
 		name: "Alex G.",
 		role: "Beginner cook",
 		quote:
-			"Recipes are simple and forgiving. The flavor notes help me swap ingredients without ruining the dish.",
+			"The benefit callouts are concise—now I know when to choose arugula for a peppery boost or kale for more K.",
 	},
 ];
 
@@ -25,7 +25,7 @@ export function TestimonialsSection() {
 			<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-14">
 					<h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-						Trusted by home cooks
+					Loved by health-minded people
 					</h2>
 					<p className="mt-4 text-lg text-gray-600">
 						Real feedback from people using VegWell to cook more vegetables,

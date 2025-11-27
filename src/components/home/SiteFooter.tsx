@@ -21,7 +21,7 @@ export function SiteFooter() {
 					<div>
 						<h3 className="text-xl font-bold mb-4">VegetableWeb</h3>
 						<p className="text-gray-300">Your guide to vegetables, nutrition, and simple recipes.</p>
-						<p className="mt-2 text-sm text-green-100">Learn it. Cook it. Enjoy it.</p>
+						<p className="mt-2 text-sm text-green-100">Know it. Choose it. Enjoy it.</p>
 					</div>
 					<div>
 						<h4 className="font-semibold mb-4">Explore</h4>
@@ -72,13 +72,13 @@ export function SiteFooter() {
 							</a>
 							</li>
 							<li>
-								<span className="text-gray-300">We&apos;re here to help you cook more vegetables.</span>
+								<span className="text-gray-300">Here to help you learn more about vegetables.</span>
 							</li>
 						</ul>
 					</div>
 				</div>
 				<div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-					<p>&copy; 2024 VegetableWeb. Built for home cooks.</p>
+					<p>&copy; 2025 VegetableWeb. Built for health.</p>
 				</div>
 			</div>
 		</footer>

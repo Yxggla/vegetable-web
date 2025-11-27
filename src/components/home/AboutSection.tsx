@@ -7,33 +7,33 @@ export function AboutSection() {
 				<div className="grid lg:grid-cols-2 gap-16 items-center">
 					<div>
 						<span className="inline-flex items-center rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-700">
-							Eat better, starting with vegetables you understand
+							Eat better by knowing what each vegetable does for you
 						</span>
 						<h2 className="mt-6 text-3xl md:text-4xl font-bold text-gray-900">
-							Simple guides for picking, prepping, and cooking
+							Simple guides to nutrients, benefits, and flavor
 						</h2>
 						<p className="mt-4 text-lg text-gray-600">
-							We break down every vegetable with flavor notes, quick prep tips,
-							and recipe ideas that keep nutrients intact. No jargon—just
-							kitchen-friendly advice you can use tonight.
+							We break down every vegetable with clear nutrition highlights,
+							key benefits, sourcing notes, and flavor cues. No jargon—just
+							practical facts to help you choose what fits your health goals.
 						</p>
 						<div className="mt-8 grid sm:grid-cols-2 gap-6">
 							<div className="rounded-lg border border-green-100 bg-white p-6 shadow-sm">
 								<h3 className="text-lg font-semibold text-gray-900">
-									Flavor & texture profiles
+									Nutrition snapshots
 								</h3>
 								<p className="mt-2 text-sm text-gray-600">
-									Know when to sauté, roast, or eat raw based on crunch, sweetness,
-									and aroma.
+									See fiber, vitamins, and phytonutrients at a glance, with
+									benefits like immunity support or heart health.
 								</p>
 							</div>
 							<div className="rounded-lg border border-blue-100 bg-white p-6 shadow-sm">
 								<h3 className="text-lg font-semibold text-gray-900">
-									Prep & storage shortcuts
+									Flavor & freshness notes
 								</h3>
 								<p className="mt-2 text-sm text-gray-600">
-									Faster washing, chopping, and keep-fresh steps that cut waste and
-									save weeknight time.
+									Understand taste, texture, and seasonality so you can pick
+									confidently and reduce waste.
 								</p>
 							</div>
 						</div>
@@ -42,7 +42,7 @@ export function AboutSection() {
 						<div className="absolute inset-0 -m-6 rounded-3xl bg-gradient-to-br from-green-100 via-blue-50 to-purple-100 blur-3xl opacity-70" />
 						<div className="relative rounded-3xl border border-white/50 bg-white p-8 shadow-xl">
 							<Image
-								src="/window.svg"
+								src="/images/home/02.JPG"
 								alt="VegetableWeb smart farm interior illustration"
 								width={520}
 								height={380}

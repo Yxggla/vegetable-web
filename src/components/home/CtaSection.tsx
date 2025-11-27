@@ -6,11 +6,11 @@ export function CtaSection() {
 					<div className="md:flex md:items-center md:justify-between">
 						<div className="max-w-xl">
 							<h2 className="text-3xl font-bold">
-								Get weekly veggie + recipe tips
+								Get weekly veggie insights
 							</h2>
 							<p className="mt-3 text-green-100">
-								Short emails with seasonal vegetables, quick prep tricks, and
-								healthy recipes. No ads, no sales—just ideas for your next meal.
+								Short emails with seasonal highlights, nutrition callouts, and
+								plain-language benefits. No ads, no sales.
 							</p>
 						</div>
 						<form className="mt-8 md:mt-0 md:w-80 space-y-3">
