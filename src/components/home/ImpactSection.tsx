@@ -1,8 +1,8 @@
 const stats = [
-	{ value: "120+", label: "Vegetable profiles" },
-	{ value: "80+", label: "Benefit callouts" },
-	{ value: "60+", label: "Seasonality notes" },
-	{ value: "0", label: "Sales or ads" },
+	{ value: "20+", label: "Vegetable profiles" },
+	{ value: "8+", label: "Benefit callouts" },
+	{ value: "16+", label: "Seasonality notes" },
+	{ value: "10", label: "Sales or ads" },
 ];
 
 const workflow = [
@@ -14,14 +14,14 @@ const workflow = [
 			"M13 16h-1v-4h-1m1-4h.01M5.455 20h13.09A2.455 2.455 0 0021 17.545V6.455A2.455 2.455 0 0018.545 4H5.455A2.455 2.455 0 003 6.455v11.09A2.455 2.455 0 005.455 20z",
 	},
 	{
-		title: "Compare benefits",
+		title: "Premium Recipes",
 		description: "See which veggies support immunity, heart health, or digestion.",
 		iconClass: "text-blue-600",
 		iconPath: "M4 6h16M4 12h16M4 18h16",
 	},
 	{
 		title: "Save your favorites",
-		description: "Bookmark what matters to you and track seasonal highlights.",
+		description: "Bookmark your vegetables and record your personal recipes",
 		iconClass: "text-purple-600",
 		iconPath: "M3 10h18M7 21h10M12 3v7m-7 0v11m14-11v11",
 	},

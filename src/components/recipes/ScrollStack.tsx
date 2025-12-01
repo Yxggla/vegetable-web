@@ -11,6 +11,7 @@ import Lenis from "lenis";
 export interface ScrollStackItemProps {
 	itemClassName?: string;
 	children: ReactNode;
+	style?: React.CSSProperties;
 }
 
 export const ScrollStackItem: React.FC<ScrollStackItemProps> = ({
@@ -18,7 +19,7 @@ export const ScrollStackItem: React.FC<ScrollStackItemProps> = ({
 	itemClassName = "",
 }) => (
 	<div
-		className={`scroll-stack-card relative w-full min-h-[22rem] lg:min-h-[28rem] my-4 p-6 rounded-[28px] shadow-[0_8px_30px_rgba(0,0,0,0.08)] bg-white/95 box-border origin-top will-change-transform ${itemClassName}`.trim()}
+		className={`scroll-stack-card  border-[#a5d6a7]/60 border-4  relative w-full min-h-[22rem] lg:min-h-[28rem] my-4 p-6 rounded-[28px] shadow-[0_8px_30px_rgba(0,0,0,0.08)] box-border origin-top will-change-transform ${itemClassName}`.trim()}
 		style={{
 			backfaceVisibility: "hidden",
 			transformStyle: "preserve-3d",

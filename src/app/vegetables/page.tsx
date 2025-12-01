@@ -38,7 +38,7 @@ async function VegetableContent() {
 			<div className="space-y-6">
 				<header className="flex flex-col space-y-2">
 					<h2 className="text-2xl font-semibold text-gray-900">
-						Seasonal highlights
+					Seasonal Vegetables
 					</h2>
 					<p className="text-sm text-gray-600">
 						Use filters to narrow down cultivars by category, season, or growing region. Tap the heart icon to add favorites for future planning.

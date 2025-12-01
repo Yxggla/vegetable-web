@@ -7,7 +7,7 @@ const features = [
 		badgeClass: "bg-green-700",
 	},
 	{
-		title: "Plain-language science",
+		title: "Daily Health Science",
 		description: "Short explainers on why certain greens aid digestion or support immunity.",
 		iconPath:
 			"M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
@@ -15,7 +15,7 @@ const features = [
 		badgeClass: "bg-green-700",
 	},
 	{
-		title: "Seasonal highlights",
+		title: "Seasonal Vegetables",
 		description: "What’s in peak condition now, with flavor cues and storage guidance to keep it fresh.",
 		iconPath:
 			"M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
@@ -80,7 +80,7 @@ export function TechnologySection() {
 						</div>
 						<div className="space-y-4 text-sm md:text-base text-green-50">
 							{[
-								"Compare nutrients and benefits side by side when choosing what to buy.",
+								"Compare nutrients and benefits side by side when choosing what to cook.",
 								"See sourcing notes and peak season windows to pick the best batch.",
 								"Allergens and nutrition called out in plain language—no guessing.",
 							].map((item, index) => (

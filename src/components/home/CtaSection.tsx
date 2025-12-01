@@ -9,7 +9,7 @@ export function CtaSection() {
 								Get weekly veggie insights
 							</h2>
 							<p className="mt-3 text-green-100">
-								Short emails with seasonal highlights, nutrition callouts, and
+								Short emails with Seasonal Vegetables, nutrition callouts, and
 								plain-language benefits. No ads, no sales.
 							</p>
 						</div>

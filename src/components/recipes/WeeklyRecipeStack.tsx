@@ -4,12 +4,15 @@ import ScrollStack, { ScrollStackItem } from "@/components/recipes/ScrollStack";
 import type { WeeklyRecipe } from "@/data/recipes";
 
 const badgeColors = [
-	"from-green-500 via-lime-400 to-emerald-500",
-	"from-amber-500 via-orange-400 to-rose-500",
-	"from-sky-500 via-cyan-400 to-indigo-500",
+	"bg-[#66bb6a]",
+	"bg-[#4caf50]",
+	"bg-[#43a047]",
+	"bg-[#388e3c]",
+	"bg-[#2e7d32]",
+	"bg-[#1b5e20]",
 ];
 
-function getBadgeGradient(index: number) {
+function getBadgeColor(index: number) {
 	return badgeColors[index % badgeColors.length];
 }
 
@@ -28,12 +31,12 @@ export function WeeklyRecipeStack({ recipes }: WeeklyRecipeStackProps) {
 				itemStackDistance={20}
 			>
 					{recipes.map((recipe, index) => {
-						const badgeGradient = getBadgeGradient(index);
+						const badgeColor = getBadgeColor(index);
 						const accessoryCount = recipe.accessories.length;
 						const stepCount = recipe.cookingSteps.length;
 
 						return (
-							<ScrollStackItem key={`${recipe.dishName}-${index}`}>
+							<ScrollStackItem key={`${recipe.dishName}-${index}`} >
 							<div className="flex h-full flex-col gap-4 rounded-[24px] border border-green-100/70 bg-white/95 p-5 shadow-[0_15px_45px_rgba(16,185,129,0.08)]">
 								<header className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
 									<div className="space-y-1.5">
@@ -52,7 +55,7 @@ export function WeeklyRecipeStack({ recipes }: WeeklyRecipeStackProps) {
 									</div>
 									<div className="flex flex-wrap items-center gap-3 text-base text-gray-600">
 										<span
-											className={`inline-flex items-center rounded-full bg-gradient-to-r ${badgeGradient} px-4 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.32em] text-white`}
+											className={`inline-flex items-center rounded-full ${badgeColor} px-4 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.32em] text-white`}
 										>
 											Fresh focus
 										</span>
@@ -67,9 +70,9 @@ export function WeeklyRecipeStack({ recipes }: WeeklyRecipeStackProps) {
 											</div>
 											<ol className="mt-3 space-y-3 text-lg leading-8 text-gray-700">
 												{recipe.cookingSteps.map((step, stepIndex) => (
-													<li key={`${recipe.dishName}-step-${stepIndex}`} className="flex gap-3 rounded-2xl border border-gray-100 bg-white/95 p-3">
+													<li key={`${recipe.dishName}-step-${stepIndex}`} className="flex gap-3 rounded-2xl border border-gray-100 bg-green-50/70 p-3 ">
 														<span
-															className={`inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${badgeGradient} text-sm font-bold text-white`}
+															className={`inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full ${badgeColor} text-sm font-bold text-white`}
 														>
 															{stepIndex + 1}
 														</span>
@@ -102,7 +105,7 @@ export function WeeklyRecipeStack({ recipes }: WeeklyRecipeStackProps) {
 								</div>
 								<footer className="pt-2 text-xs font-medium text-gray-400">
 									<div className="flex items-center gap-3">
-										<p className="uppercase tracking-[0.4em]">Day {index + 1} of 7</p>
+										<p className="uppercase tracking-[0.4em]">Day {index + 1} of 6</p>
 										<div className="h-px flex-1 bg-gradient-to-r from-green-100 via-green-200 to-transparent" />
 									</div>
 								</footer>
