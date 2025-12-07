@@ -1,8 +1,53 @@
+"use client";
+
 import Link from "next/link";
+import { useState, useRef, useEffect } from "react";
 
 export function HeroSection() {
+	const [showVideo, setShowVideo] = useState(true);
+	const [videoFading, setVideoFading] = useState(false);
+	const videoRef = useRef<HTMLVideoElement>(null);
+
+	useEffect(() => {
+		const video = videoRef.current;
+		if (!video) return;
+
+		const handleEnded = () => {
+			setVideoFading(true);
+			setTimeout(() => {
+				setShowVideo(false);
+			}, 500); 
+		};
+
+		video.addEventListener("ended", handleEnded);
+		video.play().catch((err) => {
+			console.error("视频播放失败:", err);
+			setShowVideo(false);
+		});
+
+		return () => {
+			video.removeEventListener("ended", handleEnded);
+		};
+	}, []);
+
 	return (
 		<section className="relative pb-24 pt-12">
+			{showVideo && (
+				<div
+					className={`fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-500 ${
+						videoFading ? "opacity-0" : "opacity-100"
+					}`}
+				>
+					<video
+						ref={videoRef}
+						src="/videos/hero_video.mp4"
+						className="w-full h-full object-cover"
+						muted
+						playsInline
+						autoPlay
+					/>
+				</div>
+			)}
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center">
 					<img
