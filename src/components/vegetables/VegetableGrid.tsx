@@ -47,7 +47,9 @@ export function VegetableGrid({ items }: Props) {
 				const matchesCategory =
 					filters.category === "All" || item.category === filters.category;
 				const matchesSeason =
-					filters.season === "All" || item.seasons.includes(filters.season);
+					filters.season === "All"
+						? true
+						: item.seasons.includes(filters.season);
 				const query = filters.search.trim().toLowerCase();
 				const searchableFields = [
 					item.name,

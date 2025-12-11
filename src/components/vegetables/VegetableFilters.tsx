@@ -76,7 +76,11 @@ export function VegetableFilters({ items }: Props) {
 				<div className="relative">
 					<select
 						value={filters.category}
-						onChange={(event) => updateFilters({ category: event.target.value })}
+						onChange={(event) =>
+							updateFilters({
+								category: event.target.value as VegetableCategory | "All",
+							})
+						}
 						className={`${selectClassName} pr-10`}
 					>
 						{categoryOptions.map((option) => (
@@ -105,7 +109,11 @@ export function VegetableFilters({ items }: Props) {
 				<div className="relative">
 					<select
 						value={filters.season}
-						onChange={(event) => updateFilters({ season: event.target.value })}
+						onChange={(event) =>
+							updateFilters({
+								season: event.target.value as GrowingSeason | "All",
+							})
+						}
 						className={`${selectClassName} pr-10`}
 					>
 						{seasonOptions.map((option) => (

@@ -2,10 +2,11 @@
 
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
+import { GrowingSeason, VegetableCategory } from "@/data/vegetables";
 
 type VegetableFilters = {
-	category: string;
-	season: string;
+	category: VegetableCategory | "All";
+	season: GrowingSeason | "All";
 	search: string;
 };
 
