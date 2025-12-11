@@ -2,7 +2,6 @@
 
 import { CSSProperties, MouseEvent, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { gsap } from "gsap";
 
 export type PillNavItem = {
@@ -288,15 +287,14 @@ export function PillNav({
 							background: "var(--base, #000)",
 						}}
 					>
-						<Image
-							src={logo}
-							alt={logoAlt}
-							fill
-							sizes="42px"
-							ref={logoImgRef}
-							className="object-cover"
-							priority
-						/>
+					<img
+						src={logo}
+						alt={logoAlt}
+						ref={logoImgRef}
+						width={42}
+						height={42}
+						className="object-cover max-w-none"
+					/>
 					</Link>
 				) : (
 					<a
@@ -313,15 +311,14 @@ export function PillNav({
 							background: "var(--base, #000)",
 						}}
 					>
-						<Image
-							src={logo}
-							alt={logoAlt}
-							fill
-							sizes="42px"
-							ref={logoImgRef}
-							className="object-cover"
-							priority
-						/>
+					<img
+						src={logo}
+						alt={logoAlt}
+						width={42}
+						height={42}
+						ref={logoImgRef}
+						className="object-cover max-w-none"
+					/>
 					</a>
 				)}
 
