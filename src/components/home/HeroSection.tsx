@@ -16,7 +16,7 @@ export function HeroSection() {
 			setVideoFading(true);
 			setTimeout(() => {
 				setShowVideo(false);
-			}, 500); 
+			}, 400); 
 		};
 
 		video.addEventListener("ended", handleEnded);
